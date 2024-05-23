@@ -6,9 +6,8 @@ import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-
 
 const formSchema = z
 	.object({
@@ -49,7 +48,8 @@ export default function Home() {
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
 					className="border-2 rounded-md border-black max-w-lg w-full flex flex-col gap-6"
-				><h1 className="font-semi-bold text-center">Log Into your account</h1>
+				>
+					<h1 className="font-semi-bold text-center">Log Into your account</h1>
 					<FormField
 						control={form.control}
 						name="email"
@@ -96,8 +96,12 @@ export default function Home() {
 						}}
 					/>
 					<Button type="submit">Log In</Button>
-          <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">Or</div>
-					<Link href={"/signup"} className={buttonVariants({ variant: "outline" })}>Create Account</Link>
+					<div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
+						Or
+					</div>
+					<Link href={"/signup"} className={buttonVariants({ variant: "outline" })}>
+						Create Account
+					</Link>
 				</form>
 			</Form>
 		</main>
